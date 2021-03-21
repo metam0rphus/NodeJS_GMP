@@ -1,6 +1,6 @@
-const { pipeline, Transform } = require('stream');
-const fs = require('fs');
-const csv = require('csvtojson');
+import { pipeline, Transform } from 'stream';
+import { createReadStream, createWriteStream } from 'fs';
+import csv from 'csvtojson';
 
 const formatBook = (book) => Object.fromEntries(
     Object.entries(book)
@@ -19,10 +19,10 @@ const formatter = () => new Transform({
 });
 
 pipeline(
-    fs.createReadStream('./csv/input.csv'),
+    createReadStream('./csv/input.csv'),
     csv(),
     formatter(),
-    fs.createWriteStream('./output.txt'),
+    createWriteStream('./output.txt'),
     (err) => {
         if (err) {
             console.error('Pipeline failed.', err);
