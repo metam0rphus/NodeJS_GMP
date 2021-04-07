@@ -2,11 +2,10 @@
   "name": "1-basics",
   "version": "1.0.0",
   "description": "",
-  "main": "task1.js",
-  "type": "module",
+  "main": "src/task1.js",
   "scripts": {
-    "task1": "nodemon task1.js",
-    "task2": "nodemon task2.js"
+    "task1": "nodemon --exec babel-node src/task1.js",
+    "task2": "nodemon --exec babel-node src/task2.js"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +14,9 @@
     "csvtojson": "^2.0.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/node": "^7.13.10",
-    "@babel/preset-env": "^7.13.10"
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.12"
   }
 }
